@@ -6,25 +6,20 @@ This Django-based project implements a Booking System API using Django REST Fram
 
 ## Requirements
 
-- Python 3.x
-- Django 3.x
-- Django REST Framework 3.x
+- Python Python 3.11.6
+- Django 4.2
+- Django REST Framework 3.15.2
 
 ## Installation
 
 1. **Clone the repository:**
 
-   ```bash
+   ```
    git clone <repository_url>
    cd simple_booking_drf
    ```
 
-Certainly! Here's the text formatted in Markdown:
-
-markdown
-Copy code
-
-### Setup virtual environment (optional but recommended):
+### Setup virtual environment (recommended):
 
 ```bash
 python -m venv venv
@@ -62,12 +57,12 @@ python manage.py runserver
 
 Use `/services/` endpoint to manage services.
 
-- Create, update, delete services via API.
+- Create, update, delete services via API.(ADMIN user only)
 
 ## Managing Time Slots:
 
-There is endpoint to manage time slots.
-that functionality is strictly admin related
+There is no endpoint to manage time slots.
+that functionality is strictly ADMIN related
 
 - Create, update, delete time slots associated with services.
   (to create timeslot for service start_time field is required while
