@@ -13,17 +13,25 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path, include
+
+# from .views import root_route, CustomTokenRefreshView
 from .views import root_route
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
     path("", root_route),
-    path('accounts/', include('allauth.urls')),
+    path("accounts/", include("allauth.urls")),
     path("api-auth/", include("rest_framework.urls")),
-    path('dj-rest-auth/', include('dj_rest_auth.urls')),
-    path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
-    path('services/', include('scheduling.urls')),
-    path('bookings/', include('booking.urls')),
+    path("dj-rest-auth/", include("dj_rest_auth.urls")),
+    path("dj-rest-auth/registration/", include("dj_rest_auth.registration.urls")),
+    # path(
+    #     "dj-rest-auth/token/refresh/",
+    #     CustomTokenRefreshView.as_view(),
+    #     name="token_refresh",
+    # ),
+    path("services/", include("scheduling.urls")),
+    path("bookings/", include("booking.urls")),
 ]
